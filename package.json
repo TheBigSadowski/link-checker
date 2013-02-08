@@ -1,0 +1,21 @@
+{
+  "name":        "link-checker",
+  "version":     "0.0.1",
+  "author":      "TheBigSadowski",
+  "keywords":    "github hubot campfire bot",
+  "description": "A little tool to help keep an eye on different pages",
+
+  "repository" : {
+    "type": "git",
+    "url":  "https://github.com/TheBigSadowski/link-checker.git"
+  },
+
+  "dependencies": {
+    "lazy": ">=1.0.8"
+  },
+
+  "engines": {
+    "node": ">= 0.8.x",
+    "npm": "1.1.x"
+  }
+}
