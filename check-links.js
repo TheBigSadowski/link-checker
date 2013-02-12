@@ -27,8 +27,9 @@ function check(link) {
 		});
 		res.on('end', function() {
 			console.log(' end: ' + link.url);
-			if (link.lookFor) {
-				var fail = res.data.search(link.lookFor) >= 0 ? 'found' : 'not-found';
+			if (link.failOnMatch) {
+				var rx = new RegExp(link.failOnMatch, "i");
+				var fail = res.data.search(rx) >= 0 ? 'found' : 'not-found';
 				console.log(link.url + ' : ' + fail);
 			}
 		});
@@ -42,11 +43,10 @@ function check(link) {
 }
 
 var links = [
- { lookFor: /askldjf/, url: "http://nodejs.org/api/fs.html"},
- { lookFor: /manual/i, url: "http://nodejs.org/api/fs.html?"}
+ { "failOnMatch": "askldjf", "url": "http://nodejs.org/api/fs.html"},
+ { "failOnMatch": "manual", "url": "http://nodejs.org/api/fs.html?"}
 ];
 
-//console.log(stuff);
 for (var i = 0; i < 2; i++) {
 	check(links[i]);
 }
