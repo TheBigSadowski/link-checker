@@ -15,27 +15,19 @@ new lazy(fs.createReadStream('links-to-check.txt'))
 */
 
 function check(link) {
-	//console.log(link);
 	var request = http.get(link.url, function(res) {
-		console.log('response from ' + link.url);
-		//console.log(res);
 		res.setEncoding('utf8');
 		res.data = '';
 		res.on('data', function(chunk) {
 			res.data += chunk;
-			//console.log('  chunk from ' + link.url);
 		});
 		res.on('end', function() {
-			console.log(' end: ' + link.url);
 			if (link.failOnMatch) {
 				var rx = new RegExp(link.failOnMatch, "i");
 				var fail = res.data.search(rx) >= 0 ? 'found' : 'not-found';
 				console.log(link.url + ' : ' + fail);
 			}
 		});
-	});
-	request.on('data', function(chunk) {
-		console.log(' chunk from ' + link.url);
 	});
 	request.on('error', function(err) {
 		console.log(err);
