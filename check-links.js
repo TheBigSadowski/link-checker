@@ -47,6 +47,6 @@ var links = [
  { "failOnMatch": "manual", "url": "http://nodejs.org/api/fs.html?"}
 ];
 
-for (var i = 0; i < 2; i++) {
+for (var i = 0; i < links.length; i++) {
 	check(links[i]);
 }
