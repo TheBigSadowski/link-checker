@@ -10,8 +10,10 @@ function check(link) {
         res.on('end', function() {
             if (link.failOnMatch) {
                 var rx = new RegExp(link.failOnMatch, "i");
-                var fail = res.data.search(rx) >= 0 ? 'found' : 'not-found';
-                console.log(link.url + ' : ' + fail);
+                var fail = res.data.search(rx) >= 0;
+                if (fail) {
+                    console.log("FAIL: " + link.url);
+                }
             }
         });
     });
