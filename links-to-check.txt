@@ -1,4 +1,0 @@
-http://google.com
-http://blog.kwiqly.com/2012/10/waste-problem-fg-answers-be-on-fire.html
-http://nodejs.org/api/fs.html
-http://google.com/not-found
