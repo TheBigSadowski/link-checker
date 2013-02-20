@@ -55,7 +55,3 @@ fs.readFile('links.json', function(err, data) {
 	monitor.on('end', function() { /* checking complete! */ });
 	monitor.check(sites);
 });
-
-//var monitor = require('./lib/checker');
-
-
