@@ -1,0 +1,39 @@
+[
+{ site: "google.com",
+  pages: [
+    "/",
+    "/?q=manatee",
+    "/q=fail"
+  ]
+},
+{ site: "blog.kwiqly.com",
+  pages: [
+    "/2012/10/waste-problem-fg-answers-be-on-fire.html"
+  ]
+},
+{ site: "nodejs.org",
+  errors: [],
+  pages: [
+    "/api/fs.html"
+  ]
+},
+{ site: "amy.com",
+  pages: ["/this-is-not-a-page"]
+},
+{ site: "www.banton.com"
+  errors: [
+    "The page you are trying to access is experiencing a problem",
+    "We're sorry, we couldn't find any items that matched your search term"
+  ]
+  pages: [
+    "/shop/home/holiday-shop/collectibles/%22",
+    "/shop/juniors/prom-shop/"
+  ]
+}
+]
+
+http://nodejs.org/api/fs.html
+http://google.com/not-found
+http://amy.com/this-is-not-a-page
+http://www.bonton.com/shop/home/holiday-shop/collectibles/%22
+http://www.bonton.com/shop/juniors/prom-shop/
