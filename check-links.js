@@ -20,10 +20,8 @@ var Monitor = function() {
 	
 	this.checkSite = function(site, page, errors) {
 	    var request = http.get({ hostname: site, path: page }, function(res) {
-			//console.log(res.statusCode + '  ' + site + page);
 	        if (res.statusCode != 200) {
 				self.emit('fail', { site: site, page: page, reason: 'The server returned status code ' + res.statusCode});
-	            //console.log(res.statusCode + '  ' + site + page);
 	        } else {
 	            res.setEncoding('utf8');
 	            res.data = '';
@@ -36,7 +34,6 @@ var Monitor = function() {
 	                    var fail = res.data.search(rx) >= 0;
 	                    if (fail) {
 							self.emit('fail', { site: site, page: page, reason: 'The text [' + errors[i] + '] was found on the page'});
-	                        //console.log("FAIL: " + site + page);
 	                    }
 	                }
 	            });
