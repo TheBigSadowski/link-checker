@@ -12,15 +12,16 @@
   ]
 },
 { "site": "nodejs.org",
-  "errors": [],
+  "errors": ["addlistener"],
   "pages": [
-    "/api/fs.html"
+    "/api/fs.html",
+    "/api/events.html"
   ]
 },
 { "site": "amy.com",
   "pages": ["/this-is-not-a-page"]
 },
-{ "site": "www.banton.com",
+{ "site": "www.bonton.com",
   "errors": [
     "The page you are trying to access is experiencing a problem",
     "We're sorry, we couldn't find any items that matched your search term"
