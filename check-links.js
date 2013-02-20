@@ -6,6 +6,7 @@ fs.readFile('links.json', function(err, data) {
     var sites = JSON.parse(data);
 	var monitor = new Monitor();
 	monitor.on('fail', function(why) { console.log(why); });
+	monitor.on('error', function(why) { console.log(why); });
 	monitor.on('end', function() { /* checking complete! */ });
 	monitor.check(sites);
 });
