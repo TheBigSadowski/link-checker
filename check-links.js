@@ -22,7 +22,7 @@ var Monitor = function() {
 	    var request = http.get({ hostname: site, path: page }, function(res) {
 			//console.log(res.statusCode + '  ' + site + page);
 	        if (res.statusCode != 200) {
-				self.emit('fail', { site: site, page: page, reason: 'The server returned status code ' + res.statusCode + ' was found on the page'});
+				self.emit('fail', { site: site, page: page, reason: 'The server returned status code ' + res.statusCode});
 	            //console.log(res.statusCode + '  ' + site + page);
 	        } else {
 	            res.setEncoding('utf8');
