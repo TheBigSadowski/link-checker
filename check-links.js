@@ -13,12 +13,12 @@ var Monitor = function() {
 	    for (var i = 0; i < sites.length; i++) {
 	        var site = sites[i];
 	        for (var j = 0; j < site.pages.length; j++) {
-	            this.checkSite(site.site, site.pages[j], site.errors);
+	            checkSite(site.site, site.pages[j], site.errors);
 	        }
 	    }
 	};
 	
-	this.checkSite = function(site, page, errors) {
+	var checkSite = function(site, page, errors) {
 	    var request = http.get({ hostname: site, path: page }, function(res) {
 	        if (res.statusCode != 200) {
 				self.emit('fail', { site: site, page: page, reason: 'The server returned status code ' + res.statusCode});
